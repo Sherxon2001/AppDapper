@@ -52,6 +52,11 @@ namespace AppDapper.Data
             return new SqlConnection(_config.GetConnectionString(_connectionString));
         }
 
+        public Task<T> GetPinfl<T>(string query, DynamicParameters pars, CommandType commandType = CommandType.StoredProcedure)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<T> Update<T>(string query, DynamicParameters pars, CommandType commandType = default)
         {
             IDbConnection db = GetConnection();
